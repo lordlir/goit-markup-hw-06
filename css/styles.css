@@ -274,18 +274,18 @@ svg {
   height: 30px;
   padding: 0;
 
+  cursor: pointer;
   border-radius: 50%;
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   fill: currentColor;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal__btn-close:hover,
 .modal__btn-close:focus {
-  color: var(--brand-color);
+  fill: var(--brand-color);
 }
 
 .modal__feedback {
@@ -359,8 +359,6 @@ svg {
 }
 
 .modal__form-chekbox {
-  display: flex;
-  align-items: center;
   margin: 0 auto 30px;
 
   font-size: 14px;
@@ -380,6 +378,11 @@ svg {
   margin: -1px;
 }
 
+.modal__chek-conteiner {
+  display: flex;
+  align-items: center;
+}
+
 .modal__form-contract {
   margin-left: 3px;
   color: var(--brand-color);
@@ -394,17 +397,23 @@ svg {
   color: transparent;
   border: 2px solid #000000;
   border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal__chek-icon {
   position: absolute;
   left: -2px;
   top: -2px;
-  fill: currentColor;
+  opacity: 0;
+  fill: var(--background-main);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal__checkbox:checked ~ .modal__chek-border {
-  color: var(--brand-color);
+.modal__checkbox:checked ~ .modal__chek-border,
+.modal__checkbox:checked ~ .modal__chek-border .modal__chek-icon {
+  fill: var(--brand-color);
   border-color: var(--brand-color);
+  opacity: 1;
 }
 
 .form-btn {
@@ -512,6 +521,7 @@ section employments*/
   margin: 0;
 
   font-size: 14px;
+  font-weight: 700;
   line-height: calc(16 / 14);
   text-transform: uppercase;
   text-align: center;
@@ -586,10 +596,8 @@ section employments*/
   text-decoration: none;
   fill: var(--icon-color);
   background-color: var(--background-main);
-  color: var(--background-main);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 500ms cubic-bezier(0.4, 0, 0.2, 1) 125ms;
 }
 
@@ -601,7 +609,7 @@ section employments*/
 .social-network__media:hover,
 .social-network__media:focus {
   background-color: var(--brand-color);
-  fill: currentColor;
+  fill: var(--background-main);
 }
 
 /* 5я секция */
@@ -623,24 +631,27 @@ section employments*/
   height: 92px;
 
   text-decoration: none;
-  color: var(--icon-color);
   border: 1px solid var(--icon-color);
   border-radius: 4px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client__link:hover,
 .client__link:focus {
-  color: var(--brand-color);
   border: 1px solid var(--brand-color);
 }
 
+.client__link:hover .client__icon,
+.client__link:focus .client__icon {
+  fill: var(--brand-color);
+}
+
 .client__icon {
-  fill: currentColor;
+  fill: var(--icon-color);
   width: 106px;
   height: 60px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*стилі портфоліо(2я страниця)*/

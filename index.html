@@ -136,21 +136,26 @@
                   ></textarea>
                 </label>
                 <label class="modal__form-chekbox">
-                  <input
-                    type="checkbox"
-                    name="hobby"
-                    value="agreement"
-                    class="modal__checkbox"
-                  />
-                  <span class="modal__chek-border"
-                    ><svg class="modal__chek-icon" width="16" height="15">
-                      <use
-                        href="./images/symbol-defs.svg#icon-icon-check"
-                      ></use>
-                    </svg>
-                  </span>
-                  <span>Погоджуюся з розсилкою та приймаю</span>
-                  <a href="" class="modal__form-contract"> Умови договору</a>
+                  <div class="modal__chek-conteiner">
+                    <input
+                      type="checkbox"
+                      name="hobby"
+                      value="agreement"
+                      class="modal__checkbox"
+                    />
+
+                    <span class="modal__chek-border"
+                      ><svg class="modal__chek-icon" width="16" height="15">
+                        <use
+                          href="./images/symbol-defs.svg#icon-icon-check"
+                        ></use>
+                      </svg>
+                    </span>
+                    <span class="modal__chek-text"
+                      >Погоджуюся з розсилкою та приймаю</span
+                    >
+                    <a href="" class="modal__form-contract"> Умови договору</a>
+                  </div>
                 </label>
                 <button type="submit" class="form-btn">Відправити</button>
               </form>
@@ -581,12 +586,12 @@
         <div class="footer-subscribe">
           <p class="footer-media__sub-title">Підпишіться на розсилку</p>
           <form class="form-subscribe__form">
-            <label for="user-mail" class="form-subscribe__field">
+            <label for="subscribe-mail" class="form-subscribe__field">
               <input
                 class="form-subscribe__input"
                 type="email"
                 name="subscribe-mail"
-                id="user-mail"
+                id="subscribe-mail"
                 placeholder="E-mail"
               />
             </label>
