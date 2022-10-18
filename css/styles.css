@@ -1,11 +1,3 @@
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 14px;
-  color: var(--main-text-color);
-  letter-spacing: 0.03em;
-  background-color: var(--background-main);
-}
-
 :root {
   --brand-color: #2196f3;
   --main-text-color: #212121;
@@ -14,6 +6,14 @@ body {
   --other-bg: #f5f4fa;
   --icon-color: #afb1b8;
   --dark-bg: #2f303a;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: var(--main-text-color);
+  letter-spacing: 0.03em;
+  background-color: var(--background-main);
 }
 
 .visually-hidden {
@@ -29,11 +29,6 @@ body {
   margin: -1px;
 }
 
-.link {
-  list-style: none;
-  text-decoration: none;
-}
-
 .conteiner {
   width: 1200px;
   padding-left: 15px;
@@ -42,25 +37,26 @@ body {
   margin-left: auto;
 }
 
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 img,
 svg {
   display: block;
 }
 /*стилі шапки(header)*/
 .page-header {
-  position: sticky;
-  z-index: 50;
-  top: 0;
-
   background-color: var(--background-main);
   border-bottom: 1px solid #ececec;
 }
 
-.page-header .conteiner {
+.page-header__conteiner {
   display: flex;
 }
 
-.navigation {
+.page-header__navigation {
   display: flex;
   align-items: center;
 }
@@ -75,25 +71,27 @@ svg {
   font-weight: 700;
   font-size: 26px;
   line-height: calc(31 / 26);
+  text-decoration: none;
 
   color: #000000;
 }
 
-.web-logo {
+.logo__part {
   color: var(--brand-color);
 }
 
-.nav-links .item:not(:last-child) {
+.page-header__nav-item:not(:last-child) {
   margin-right: 50px;
 }
 
-.nav-links {
+.page-header__nav-list {
   display: flex;
   margin: 0;
   padding-left: 0;
+  list-style: none;
 }
 
-.nav-link {
+.page-header__nav-link {
   display: block;
   position: relative;
   padding: 32px 0;
@@ -101,12 +99,13 @@ svg {
   font-weight: 500;
   line-height: calc(16 / 14);
   letter-spacing: 0.02em;
+  text-decoration: none;
 
   color: var(--main-text-color);
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link.active::after {
+.page-header__nav-link--active::after {
   position: absolute;
   bottom: -1px;
   border-radius: 2px;
@@ -118,152 +117,55 @@ svg {
   background-color: var(--brand-color);
 }
 
-.nav-links .nav-link:hover,
-.nav-links .nav-link:focus {
+.page-header__nav-link:hover,
+.page-header__nav-link:focus {
   color: var(--brand-color);
 }
-.nav-link.active {
+.page-header__nav-link--active {
   color: var(--brand-color);
 }
 
-.contact-links {
+.page-header__contact-list {
   display: flex;
   margin: 0;
   padding-left: 0;
   margin-left: auto;
+  list-style: none;
 }
 
-.contact-links .item:not(:last-child) {
+.page-header__contact-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.contact-link .icon {
+.page-header__contact-icon {
   margin-right: 10px;
+
   fill: currentColor;
 }
 
-.contact-link {
+.page-header__contact-link {
   display: flex;
   align-items: center;
   padding: 32px 0;
 
   font-weight: 500;
   line-height: calc(16 / 14);
+  text-decoration: none;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: var(--other-text-color);
 }
 
-.contact-links .contact-link:hover,
-.contact-links .contact-link:focus {
-  color: var(--brand-color);
-}
-/*стилі підвала(footer)*/
-.footer {
-  background-color: var(--dark-bg);
-  padding: 60px 0;
-}
-
-.footer .conteiner {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-}
-
-.footer .logo {
-  display: block;
-  color: var(--background-main);
-  margin-right: 0;
-  margin-bottom: 20px;
-  padding: 0;
-}
-
-.footer-contacts {
-  margin: 0;
-  padding: 0;
-}
-
-.footer-contacts .item:not(:last-child) {
-  margin-bottom: 9px;
-}
-
-.footer-map {
-  font-style: normal;
-  font-weight: 400;
-  line-height: calc(24 / 14);
-  color: var(--background-main);
-}
-
-.footer-contact {
-  font-style: normal;
-  line-height: calc(24 / 14);
-
-  color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.footer-contact:hover,
-.footer-contact:focus {
+.page-header__contact-link:hover,
+.page-header__contact-link:focus {
   color: var(--brand-color);
 }
 
-.media-title {
-  margin-top: 0;
-  margin-bottom: 20px;
-
-  font-weight: 700;
-  font-size: 14px;
-  line-height: calc(16 / 14);
-  text-transform: uppercase;
-  color: var(--background-main);
-}
-
-.footer-media .social-links {
-  padding: 0;
-}
-
-.footer-media .social-media {
-  fill: var(--background-main);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* footer subscribe */
-
-.form-subscribe {
-  display: flex;
-  justify-content: center;
-}
-.subscribe-input {
-  width: 360px;
-  height: 50px;
-  padding: 15px 16px;
-  margin-right: 12px;
-
-  color: var(--brand-color);
-  background-color: var(--dark-bg);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  border-radius: 4px;
-}
-
-.footer-btn {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 28px;
-}
-
-.subscribe-icion {
-  margin-left: 10px;
-}
 /*стилі студії(1я страниця)
 1-я секція*/
 
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.banner.section {
+.section-hero {
   padding-top: 200px;
   padding-bottom: 200px;
   margin-right: auto;
@@ -280,7 +182,7 @@ svg {
   background-color: var(--dark-bg);
 }
 
-.banner-title {
+.section-hero__title {
   width: 696px;
   font-weight: 900;
   font-size: 44px;
@@ -294,7 +196,7 @@ svg {
   margin: 0 auto 30px;
 }
 
-.banner-button {
+.section-hero__button {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -315,12 +217,12 @@ svg {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.banner-button:hover,
-.banner-button:focus {
+.section-hero__button:hover,
+.section-hero__button:focus {
   background-color: #188ce8;
 }
 
-.backdrop {
+.modal__backdrop {
   position: fixed;
   z-index: 51;
   top: 0;
@@ -331,17 +233,17 @@ svg {
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.modal__backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.backdrop.is-hidden .modal {
+.modal__backdrop.is-hidden .modal__win {
   transform: translate(-50%, -50%) scale(1.1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal {
+.modal__win {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -359,7 +261,7 @@ svg {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close {
+.modal__btn-close {
   position: absolute;
   display: flex;
   align-items: center;
@@ -375,15 +277,16 @@ svg {
   border: 1px solid rgba(0, 0, 0, 0.1);
   fill: currentColor;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.close:hover,
-.close:focus {
+.modal__btn-close:hover,
+.modal__btn-close:focus {
   color: var(--brand-color);
 }
 
-.modal-feedback {
+.modal__feedback {
   margin-top: 0;
   margin-bottom: 12px;
 
@@ -395,7 +298,7 @@ svg {
   color: var(--main-text-color);
 }
 /* madal form */
-.order-service {
+.modal__order-service {
   display: flex;
   flex-direction: column;
 
@@ -407,7 +310,7 @@ svg {
   color: var(--other-text-color);
 }
 
-.form-field {
+.modal__form-field {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -418,40 +321,42 @@ svg {
   margin-bottom: 20px;
 }
 
-.form-input {
+.modal__form-input {
   height: 40px;
   padding: 12px 42px;
   margin-top: 4px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-icon {
+.modal__form-icon {
   position: absolute;
   bottom: 11px;
   left: 12px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus-visible {
+.modal__form-input:focus-visible {
   outline: 1px solid var(--brand-color);
 }
 
-.form-input:focus + .form-icon {
+.modal__form-input:focus + .modal__form-icon {
   fill: var(--brand-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
 }
 
-.form-input.comment {
+.modal__form-input--comment {
   padding: 12px 16px;
   resize: none;
   height: 120px;
 }
-.comment::placeholder {
+.modal__form-input--comment::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-chekbox {
+.modal__form-chekbox {
   display: flex;
   align-items: center;
   margin: 0 auto 30px;
@@ -460,7 +365,7 @@ svg {
   line-height: calc(24 / 14);
 }
 
-.checkbox {
+.modal__checkbox {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -473,12 +378,12 @@ svg {
   margin: -1px;
 }
 
-.form-contract {
+.modal__form-contract {
   margin-left: 3px;
   color: var(--brand-color);
 }
 
-.form-chek-border {
+.modal__chek-border {
   position: relative;
   display: inline-block;
   margin-right: 8px;
@@ -488,30 +393,29 @@ svg {
   border: 2px solid #000000;
   border-radius: 4px;
 }
-.form-chek-icon {
+.modal__chek-icon {
   position: absolute;
   left: -2px;
   top: -2px;
   fill: currentColor;
 }
 
-.checkbox:checked ~ .form-chek-border {
+.modal__checkbox:checked ~ .modal__chek-border {
   color: var(--brand-color);
   border-color: var(--brand-color);
 }
 
 .form-btn {
-  text-align: center;
-  align-items: center;
-
   width: 200px;
   height: 50px;
   margin: 0 auto;
 
+  text-align: center;
   font-weight: 700;
   font-size: 16px;
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
+  cursor: pointer;
 
   color: var(--background-main);
   background-color: #188ce8;
@@ -533,18 +437,19 @@ svg {
   text-align: center;
 }
 
-.benefits-items {
+.benefits-section__list {
   display: flex;
   gap: 30px;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-.benefits-items .item {
+.benefits-section__item {
   flex-basis: calc((100%-90px) / 4);
 }
 
-.decor {
+.benefits-section__box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -554,21 +459,23 @@ svg {
   margin-bottom: 30px;
 }
 
-.icon-decor {
+.benefits-section__icon {
   width: 70px;
   height: 70px;
 }
 
-.advantage-title {
+.benefits-section__sub-title {
   margin-top: 0;
   margin-bottom: 10px;
+}
 
+.sub-title {
   font-size: 14px;
   line-height: calc(16 / 14);
   text-transform: uppercase;
 }
 
-.advantage {
+.benefits-section__advantage {
   margin: 0;
 
   line-height: calc(24 / 14);
@@ -577,26 +484,27 @@ svg {
 /*3я секція - чим ми займаємося
 section employments*/
 
-.employments.section {
+.employments-section {
   padding-top: 0;
 }
 
-.employments-items {
+.employments-section__list {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .employment {
   display: block;
 }
-.employment-card {
+.employments-section__card {
   position: relative;
 }
 
-.employment-card .advantage-title {
+.employments-section__sub-title--style {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -610,31 +518,32 @@ section employments*/
   opacity: 0.8;
 }
 /*4а секція - наша команда*/
-.team.section {
+.team-section {
   background-color: #f5f4fa;
 }
 
-.team-items {
+.team-section__list {
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-.employee {
+.team-section__item {
   overflow: hidden;
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.player-data {
+.player__data {
   padding-top: 30px;
   padding-bottom: 30px;
   background: var(--background-main);
 }
 
-.employee-title {
+.player__sub-title {
   margin-bottom: 10px;
   margin-top: 0;
 
@@ -643,7 +552,7 @@ section employments*/
   line-height: calc(19 / 16);
   text-align: center;
 }
-.employee-position {
+.player__position {
   margin-top: 0;
   margin-bottom: 16px;
 
@@ -653,16 +562,17 @@ section employments*/
   color: var(--other-text-color);
 }
 
-.social-links {
+.social-network__list {
   display: flex;
   padding: 0;
   margin: 0;
+  list-style: none;
 
   gap: 10px;
   justify-content: center;
 }
 
-.social-media {
+.social-network__media {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -670,58 +580,61 @@ section employments*/
   height: 44px;
   border-radius: 50%;
 
+  text-decoration: none;
   fill: var(--icon-color);
   background-color: var(--background-main);
   color: var(--background-main);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 125ms;
+    fill 500ms cubic-bezier(0.4, 0, 0.2, 1) 125ms;
 }
 
-.social {
+.social-network__icon {
   width: 20px;
   height: 20px;
 }
 
-.social-media:hover,
-.social-media:focus {
+.social-network__media:hover,
+.social-network__media:focus {
   background-color: var(--brand-color);
   fill: currentColor;
-
-  transform: rotate(360deg);
 }
 
 /* 5я секция */
 
-.client-links {
+.client__list {
   display: flex;
   justify-content: space-between;
   padding: 0;
   margin: 0;
+
+  list-style: none;
 }
 
-.client-link {
+.client__link {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 170px;
   height: 92px;
 
+  text-decoration: none;
   color: var(--icon-color);
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client-link:hover,
-.client-link:focus {
+.client__link:hover,
+.client__link:focus {
   color: var(--brand-color);
   border: 1px solid var(--brand-color);
 }
 
-.client {
+.client__icon {
   fill: currentColor;
   width: 106px;
   height: 60px;
@@ -729,19 +642,20 @@ section employments*/
 
 /*стилі портфоліо(2я страниця)*/
 /*  - філтер*/
-.filter-items {
+.project__filter-list {
   display: flex;
   justify-content: center;
   margin-top: 0;
   margin-bottom: 56px;
   padding: 0;
+  list-style: none;
 }
 
-.filter-items .item:not(:last-child) {
+.project__filter-item:not(:last-child) {
   margin-right: 8px;
 }
 
-.filter-items .filter-button {
+.project__filter-button {
   padding: 6px 25px;
 
   font-family: inherit;
@@ -759,8 +673,8 @@ section employments*/
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.filter-button:hover,
-.filter-button:focus {
+.project__filter-button:hover,
+.project__filter-button:focus {
   background-color: var(--brand-color);
   color: var(--background-main);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -768,37 +682,42 @@ section employments*/
 }
 /*2а секція - розділи*/
 
-.project-list {
+.project__list {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
 
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
-.project-item {
+.project__item {
   width: 370px;
   background: var(--background-main);
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-item:hover,
-.project-item:focus {
+.project__item:hover,
+.project__item:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.box {
+.project__link {
+  text-decoration: none;
+}
+
+.project__card {
   position: relative;
   overflow: hidden;
 }
 
-.project-item:hover .box-name {
+.project__item:hover .project__text {
   transform: translateY(0);
 }
 
-.box-name {
+.project__text {
   margin: 0;
   font-size: 18px;
   line-height: calc(28 / 18);
@@ -817,13 +736,13 @@ section employments*/
   opacity: 0.9;
 }
 
-.border {
+.project__main-box {
   border: 1px solid #eeeeee;
   border-top: none;
   padding: 20px 24px;
 }
 
-.project-title {
+.project__sub-title {
   font-size: 18px;
   line-height: calc(36 / 18);
   letter-spacing: 0.06em;
@@ -831,9 +750,110 @@ section employments*/
   margin-bottom: 4px;
   color: var(--main-text-color);
 }
-.project-name {
+.project__name {
   font-size: 16px;
   line-height: calc(30 / 16);
   color: var(--other-text-color);
   margin: 0;
+}
+/*стилі підвала(footer)*/
+.footer {
+  background-color: var(--dark-bg);
+  padding: 60px 0;
+}
+
+.footer__conteiner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.logo--footer {
+  display: block;
+  color: var(--background-main);
+  margin-right: 0;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.footer-contacts__list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.footer-contacts__item:not(:last-child) {
+  margin-bottom: 9px;
+}
+
+.footer-contacts__map {
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 14);
+  color: var(--background-main);
+}
+
+.footer-contact__link {
+  font-style: normal;
+  line-height: calc(24 / 14);
+  text-decoration: none;
+
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-contact__link:hover,
+.footer-contact__link:focus {
+  color: var(--brand-color);
+}
+
+.footer-media__sub-title {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-weight: 700;
+
+  color: var(--background-main);
+}
+
+.social-network__media--footer-style {
+  fill: var(--background-main);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* footer subscribe */
+
+.form-subscribe__form {
+  display: flex;
+  justify-content: center;
+}
+.form-subscribe__input {
+  width: 360px;
+  height: 50px;
+  padding: 15px 16px;
+  margin-right: 12px;
+
+  color: var(--brand-color);
+  background-color: var(--dark-bg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-subscribe__input:focus,
+.form-subscribe__input:hover,
+.form-subscribe__input:focus-visible {
+  outline: 1px solid var(--brand-color);
+  border: 1px solid var(--brand-color);
+}
+
+.form-btn--footer-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 28px;
 }
