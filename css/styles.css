@@ -467,9 +467,7 @@ svg {
 .benefits-section__sub-title {
   margin-top: 0;
   margin-bottom: 10px;
-}
 
-.sub-title {
   font-size: 14px;
   line-height: calc(16 / 14);
   text-transform: uppercase;
@@ -504,13 +502,16 @@ section employments*/
   position: relative;
 }
 
-.employments-section__sub-title--style {
+.employments-section__sub-title {
   position: absolute;
   bottom: 0;
   width: 100%;
   padding: 22px 0;
   margin: 0;
 
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
   text-align: center;
 
   color: var(--background-main);
@@ -813,6 +814,9 @@ section employments*/
   margin-top: 0;
   margin-bottom: 20px;
 
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
   font-weight: 700;
 
   color: var(--background-main);
