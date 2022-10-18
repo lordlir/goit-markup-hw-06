@@ -52,7 +52,7 @@ svg {
   border-bottom: 1px solid #ececec;
 }
 
-.page-header__conteiner {
+.page-header .conteiner {
   display: flex;
 }
 
@@ -61,19 +61,21 @@ svg {
   align-items: center;
 }
 
-.logo {
+.page-header__logo--main {
   margin-right: 93px;
   padding-top: 24px;
   padding-bottom: 25px;
 
+  color: #000000;
+}
+
+.logo {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
   line-height: calc(31 / 26);
   text-decoration: none;
-
-  color: #000000;
 }
 
 .logo__part {
