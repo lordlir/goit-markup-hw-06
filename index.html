@@ -77,8 +77,8 @@
           <button class="section-hero__button" type="button" data-modal-open>
             Замовити послугу
           </button>
-          <div class="modal__backdrop is-hidden" data-modal>
-            <div class="modal__win">
+          <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
               <button class="modal__btn-close" data-modal-close>
                 <svg class="modal__icon-close" width="18" height="18">
                   <use href="./images/symbol-defs.svg#icon-close-black"></use>
@@ -125,7 +125,10 @@
                     <use href="./images/symbol-defs.svg#icon-email-black"></use>
                   </svg>
                 </label>
-                <label for="comment" class="modal__form-field">
+                <label
+                  for="comment"
+                  class="modal__form-field modal__form-field--field-comment"
+                >
                   Коментар
                   <textarea
                     class="modal__form-input modal__form-input--comment"
@@ -509,9 +512,9 @@
       </section>
     </main>
     <footer class="footer">
-      <div class="conteiner footer__conteiner">
+      <div class="conteiner">
         <div class="footer-contacts">
-          <a href="index.html" class="logo logo--footer"
+          <a href="index.html" class="logo footer-contact__logo--dark"
             ><span class="logo__part">Web</span>Studio</a
           >
           <address>
