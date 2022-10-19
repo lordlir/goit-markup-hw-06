@@ -362,6 +362,10 @@ svg {
 }
 
 .modal__form-chekbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
   margin: 0 auto 30px;
 
   font-size: 14px;
@@ -379,12 +383,6 @@ svg {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
-}
-
-.modal__chek-conteiner {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
 }
 
 .modal__form-contract {
